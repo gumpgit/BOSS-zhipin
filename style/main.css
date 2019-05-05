@@ -1,0 +1,730 @@
+ @charset "UTF-8";
+
+ a,
+ b,
+ body,
+ button,
+ dd,
+ div,
+ dl,
+ em,
+ footer,
+ form,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ i,
+ input,
+ label,
+ li,
+ nav,
+ p,
+ select,
+ span,
+ td,
+ textarea,
+ u,
+ ul {
+   /* 盒子模型最终宽高默认是不计算 边框与内边距的
+    * content-box:最终宽高 = 内容的宽高
+    * border-box:最终宽高 = border + padding + 内容的宽高
+    */
+   box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   /* 点击链接的时候出现的高亮颜色 chrome、safari*/
+   -webkit-tap-highlight-color: transparent;
+
+
+   font-family: arial, verdana, helvetica, Microsoft Yahei, sans-serif;
+
+   /* ⭐ 字体抗锯齿渲染 chrome、safari*/
+   -webkit-font-smoothing: antialiased;
+
+   /* 解决 IOS 横屏时默认会放大文字的问题 */
+   -webkit-text-size-adjust: 100% !important
+ }
+
+ li,
+ ol,
+ ul {
+   list-style: none
+ }
+
+ a {
+   text-decoration: none;
+   color: #414a60
+ }
+
+ a:active,
+ a:focus,
+ a:hover,
+ button,
+ input,
+ textarea {
+   outline: 0
+ }
+
+ a:active {
+   color: #55cbc4;
+   text-decoration: none;
+   -webkit-transition: all linear .2s;
+   transition: all linear .2s
+ }
+
+ img {
+   border: none
+ }
+
+ map area {
+   outline: 0
+ }
+
+ table {
+   border-collapse: collapse
+ }
+
+
+
+ button,
+ input[type=button],
+ input[type=number],
+ input[type=password],
+ input[type=search],
+ input[type=submit],
+ input[type=tel],
+ input[type=text],
+ textarea {
+   -webkit-appearance: none
+ }
+
+
+ input[type=search]::-webkit-search-cancel-button {
+   -webkit-appearance: none;
+   /* content: "x";
+   height: 0.85rem;
+   width: 0.85rem;
+   border-radius: 50%;
+   background-color: #333;
+   font-size: 0.85rem;
+   color: #fff; */
+ }
+
+
+ body,
+ html {
+   height: 100%
+ }
+
+
+
+ body {
+   background: #fff;
+   margin: 0;
+   color: #7e8793;
+
+ }
+
+
+
+ .flex {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .padded {
+   padding: 1rem;
+ }
+
+ .btn {
+   border: none;
+   font-size: .9rem;
+   padding: .5rem 1.2rem;
+   border-radius: 2rem;
+ }
+
+ .grey {
+   color: #9fa3b0;
+
+ }
+
+
+ /* index begin */
+
+ .home-header {
+   background: url('/images/home-bg.png') no-repeat;
+
+   /* 宽度100% 高度自适应 */
+   background-size: 100% auto;
+   text-align: center;
+   padding-bottom: 1.3rem;
+ }
+
+ .home-header>img {
+   width: 67%;
+   /* rem 表示根目录字体尺寸(root Element font-size) 如:16px 2rem就=32px */
+   margin: 2.3rem;
+ }
+
+ .home-header form {
+   background: #fff;
+   width: 92%;
+   margin: 0 auto;
+   line-height: 2.2rem;
+   border-radius: 2.2rem;
+ }
+
+ .home-header form input {
+   width: 75%;
+   border: none;
+   color: #aaa;
+   font-size: 0.85rem;
+ }
+
+ .home-header form button {
+   font-size: .9rem;
+   color: #55cbc4;
+   font-weight: lighter;
+   background: none;
+   border: none;
+ }
+
+
+ .home-categories {
+   padding: 0 1rem;
+
+ }
+
+ .home-categories dl {
+   margin: 0;
+   padding: 1rem 0;
+   border-bottom: 1px solid #f5f8f9;
+ }
+
+ /* :last-of-type表示其父元素下的最后一个指定类型的元素。 */
+ .home-categories dl:last-of-type {
+   border-bottom: none;
+ }
+
+
+ .home-categories dt {
+   display: flex;
+   align-items: center;
+   color: #333;
+ }
+
+ .home-categories dt img {
+   height: 3rem;
+   margin-right: 1rem;
+ }
+
+ .home-categories dd {
+   /* ⭐ */
+   margin: 0 -0.4rem;
+ }
+
+ .home-categories dd a {
+   background: #f5f8f9;
+   color: #7e8793;
+   padding: 0.4rem 1rem;
+   display: inline-block;
+   border-radius: 2rem;
+   margin: 0.3rem 0.4rem;
+   font-size: 0.8rem;
+ }
+
+ .home-categories dd a:hover {
+   background-color: #cceeeb;
+ }
+
+ .home-footer {
+   width: 70%;
+   margin: 2rem auto;
+   font-size: 0.75rem;
+ }
+
+
+ .home-footer p {
+   margin: 0.2rem 0;
+ }
+
+ /* index end */
+
+
+ /* list begin */
+
+ .list-header {
+   padding: 0.8rem 1rem;
+ }
+
+ .list-header form {
+   width: 100%;
+   margin: 0;
+ }
+
+ .list-header form img {
+   height: 1.2rem;
+ }
+
+ .list-header form .inner {
+   width: 100%;
+   background: #f5f8f9;
+   margin: 0 1rem;
+   height: 1.7rem;
+   line-height: 1.7rem;
+   border-radius: 2rem;
+   padding: 0 1rem;
+ }
+
+ .list-header form .inner input {
+   width: 80%;
+   background: transparent;
+   border: none;
+   color: #aaa;
+ }
+
+ .icon-close {
+   width: 1rem;
+   height: 1rem;
+   vertical-align: top;
+ }
+
+ .icon-close:after,
+ .icon-close:before {
+   content: '';
+   position: absolute;
+   width: .8rem;
+   height: 1px;
+   background: #bbc5cc;
+   transform: rotate(45deg);
+   -webkit-transform: rotate(45deg);
+   top: 1.6rem;
+
+ }
+
+ .icon-close:after {
+   transform: rotate(-45deg);
+   -webkit-transform: rotate(-45deg);
+ }
+
+ .list-header form button {
+   border: none;
+   background: none;
+   font-size: 0.9rem;
+   color: #55cbc4;
+   flex-shrink: 0;
+   padding: 0;
+ }
+
+
+ .filter {
+   padding: .5rem 1rem;
+   border: 1px solid #f5f8f9;
+
+ }
+
+
+ .filter dl,
+ .filter dd {
+   margin: 0;
+ }
+
+ .filter dt {
+   font-size: .8rem;
+ }
+
+ .filter .active dt {
+   color: #333;
+ }
+
+ /* ⭐⭐⭐ */
+ .filter dt:after {
+   content: '';
+   display: inline-block;
+   width: 4px;
+   height: 4px;
+   border: 1px solid #999;
+   margin-left: .5rem;
+   border-style: solid none none solid;
+   transform: rotate(225deg);
+   transform-origin: 2px 1px;
+   transition: all .3s;
+ }
+
+ .filter .active dt:after {
+   transform: rotate(45deg);
+ }
+
+
+ .filter dd {
+   display: none;
+ }
+
+
+ .filter .active dd {
+   display: block;
+   background: rgba(0, 0, 0, .3);
+   width: 100%;
+   /* ⭐ */
+   height: 100vh;
+   position: absolute;
+   top: 86px;
+   left: 0;
+ }
+
+ .filter .active dd ul {
+   margin: 0;
+   padding: 0;
+   background: #fff;
+ }
+
+
+ .filter .active dd li {
+   line-height: 3.5rem;
+   text-indent: 1rem;
+   color: #aaa;
+ }
+
+
+ .filter .active dd li.active {
+   background: #f5f8f9;
+   color: #333;
+ }
+
+
+ .job-list {
+   margin: 0;
+   padding: 0;
+ }
+
+ .job-item {
+   margin: 1rem;
+   padding-bottom: 1rem;
+   color: #7e8793;
+   border-bottom: 1px solid #f5f8f9;
+
+ }
+
+ .job-item>img {
+   height: 3.5rem;
+   border-radius: .3rem;
+ }
+
+
+ .job-item .text {
+   width: 100%;
+   margin-left: 1rem;
+
+ }
+
+ .job-item .title {
+   color: #333;
+   font-size: .9rem;
+
+ }
+
+ .job-item .company {
+   color: #333;
+   font-size: .8rem;
+   margin: .2rem 0;
+ }
+
+ .job-item .salary {
+   font-size: 1.2rem;
+   color: #fc6c38;
+ }
+
+ .job-item .props {
+   font-size: .8rem;
+ }
+
+ .job-item .props span {
+   margin-right: .5rem;
+ }
+
+ /* list end */
+
+
+
+ /* detail begin */
+ .top-bar img {
+   height: 1rem;
+
+ }
+
+ .top-bar form {
+   width: 40%;
+   border: 1px solid #55cbc4;
+   border-radius: 2rem;
+   padding: 0 0.5rem;
+ }
+
+
+ .top-bar form input {
+   border: none;
+   width: 80%;
+   background: none;
+   line-height: 1.5rem;
+   color: #c0c4cf;
+   font-size: .9rem;
+ }
+
+ .top-bar form button {
+   border: none;
+   background: url("/images/icons.png") no-repeat top center;
+   background-size: 100% auto;
+   display: inline-block;
+   width: 1rem;
+   height: 1rem;
+ }
+
+ .job-info {
+   background: #62d5c8;
+   color: #fff;
+ }
+
+ .job-info .title {
+   font-size: 1.2rem;
+ }
+
+ .job-info .props {
+   font-size: .8rem;
+   margin: .5rem 0;
+
+ }
+
+ .job-info .props .item i {
+   display: inline-block;
+   width: 1px;
+   height: .8rem;
+   background: #fff;
+   margin: 0 .5rem;
+ }
+
+ .job-info .tags span {
+   border: 1px solid #fff;
+   padding: .2rem .5rem;
+   border-radius: 2rem;
+   font-size: .75rem;
+ }
+
+ .user-info {
+   background: #eefbf9;
+ }
+
+ .user-info .info {
+   width: 35%;
+ }
+
+ .user-info>img {
+   height: 3.5rem;
+   border-radius: 3.5rem;
+ }
+
+
+
+ .user-info>button {
+   background: #62d5c8;
+   color: #fff;
+   /* flex-shrink:0; */
+ }
+
+
+ .user-info .name {
+   color: #333;
+ }
+
+
+ .user-info .name .like {
+   font-size: 0.8rem;
+   color: #fb7042;
+ }
+
+ .user-info .desc {
+   font-size: .8rem;
+   color: #aaa;
+   margin-top: .5rem;
+ }
+
+
+ .job-detail h3 {
+   color: #333;
+   font-size: 1rem;
+   position: relative;
+ }
+
+ .job-detail h3:after {
+   content: '';
+   width: 1rem;
+   height: 1px;
+   display: inline-block;
+   background: #62d5c8;
+   position: absolute;
+   top: 1.8rem;
+   left: 0;
+ }
+
+ .job-detail .text {
+   font-size: .9rem;
+   line-height: 1.6rem;
+ }
+
+ .job-detail .tags {
+   padding-top: .7rem;
+
+ }
+
+ .job-detail .tags span {
+   font-size: .8rem;
+   color: #55cbc4;
+   border: 1px solid #55cbc4;
+   padding: .2rem .5rem;
+   border-radius: 1rem;
+   margin-right: .5rem;
+   margin-bottom: .5rem;
+   display: inline-block;
+ }
+
+ .job-detail .text table {
+   border: 1px solid #ebecef;
+
+   font-size: .75rem;
+ }
+
+
+ .job-detail .text th {
+   padding: .7rem .3rem;
+   font-weight: normal;
+   width: 6rem;
+   color: #9fa3b0;
+ }
+
+ .job-detail .text td {
+   width: 8rem;
+
+ }
+
+ .company-info {
+   background: #eefbf9;
+ }
+
+
+ .company-info>img {
+   width: 3.5rem;
+   border-radius: 3.5rem;
+ }
+
+ .company-info .info {
+   width: 100%;
+   margin-left: 1rem;
+ }
+
+ .company-info .info .name {
+   color: #333;
+
+ }
+
+ .company-info .info .name .btn {
+   background: #62d5c8;
+   color: #fff;
+ }
+
+
+ .company-info .info .desc {
+   font-size: .8rem;
+   color: #333;
+ }
+
+
+ .company-info .info .tags {
+   margin-top: .5rem;
+   font-size: .75rem;
+   justify-content: flex-start;
+ }
+
+ .company-info .info .tags i {
+   display: inline-block;
+   width: 1px;
+   height: .8rem;
+   background: #e0e0e0;
+   margin: 0 .5rem;
+ }
+
+ .related-jobs h3 {
+   color: #7e8793;
+   font-weight: normal;
+   font-size: .9rem;
+ }
+
+ .related-jobs ul {
+   list-style: none;
+
+ }
+
+ .related-jobs ul li>a {
+   border: none;
+   border-top: 1px solid #ebecef;
+   margin: 0;
+   padding: 1rem 0;
+ }
+
+
+ .related-jobs .btn {
+   padding: .4rem 1.2rem;
+   margin-top: .2rem;
+   border: 1px solid #62d5c8;
+   color: #62d5c8;
+   background: none;
+ }
+
+ .related-companies
+ {
+   padding-top: 0;
+   padding-bottom:0;
+ }
+ .related-companies h3 {
+   color: #7e8793;
+   font-weight: normal;
+   font-size: .9rem;
+ }
+ 
+ .related-companies .tags
+ {
+  line-height: 1.4rem;
+ }
+
+ .related-companies .tags a,
+ .job-footer a {
+   color: #9fa3b0;
+   font-size: .8rem;
+   padding: 1rem .8rem .2rem 0;
+ }
+
+ .job-footer {
+   margin: 1rem;
+   padding: 1rem 0;
+   border-top: 1px solid #ebecef;
+   line-height: 1.5rem;
+ }
+ .job-footer a 
+ {
+  padding-right: 0;
+ }
+ .job-footer i {
+   display: inline-block;
+   width: 8px;
+   height: 8px;
+   border: 1px solid #9fa3b0;
+   border-style: solid none none solid;
+   transform:rotate(135deg);
+   margin: -1px 6px 0 4px;
+
+ }
+
+
+
+
+ /* detail end */
